@@ -1,14 +1,8 @@
-// Copyright (c) 2021 James Bowes. All rights reserved.
+// Copyright (c) 2023 Rafi Hasan. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
 package future
-
-import (
-	"context"
-	"fmt"
-	"time"
-)
 
 type result[T, K any] struct {
 	t T
@@ -67,7 +61,7 @@ func New3[T, K, L any](fn func() (T, K, L)) *Future3[T, K, L] {
 
 }
 
-func (f *Future3[T, K]) Await() (T, K, L) {
+func (f *Future3[T, K, L]) Await() (T, K, L) {
 	if f.r == nil {
 		f.r = <-f.c
 	}

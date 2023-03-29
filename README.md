@@ -1,3 +1,7 @@
+# Fork
+
+This is a fork of the original repo.
+
 # future
 
 An implementation of futures/promises for `go1.18+` type parameters (generics).
@@ -59,7 +63,7 @@ For `New` to work and be type safe, you must pass a function to it, with a known
 fut := future.New(func() (int, error) { return SomeAsyncThing(ctx, arg1, arg2) })
 ```
 
- A nicer syntax would be one supported by variadic type parameters:
+A nicer syntax would be one supported by variadic type parameters:
 
 ```go
 fut := future.New(SomeAsyncThing, ctx, arg1, arg2)
@@ -67,7 +71,6 @@ fut := future.New(SomeAsyncThing, ctx, arg1, arg2)
 
 Supporting this with multiple implementations would require `(# of inputs) * (# of outputs)` implementations. For end users, calling
 `future.New3_4` seems too unwieldy.
-
 
 ## What about reflection?
 
