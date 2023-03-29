@@ -25,7 +25,7 @@ import (
 	"fmt"
 	"time"
 
-    "github.com/jbowes/future"
+    "github.com/Joker666/future"
 )
 
 func SomeAsyncThing(ctx context.Context) (int, error) {
